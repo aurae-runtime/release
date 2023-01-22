@@ -33,16 +33,16 @@ Code that has not reached stability will be versioned with an additional segment
 
 -   A PR to the `release` (this one) repository is prepped with any appropriate changes to the release json `release.json` if needed.
     -   Add any projects to be included in the upcoming release to this document.
--   Create a new pre-release from the main branch of this project.
+-   Create a new pre-release from the main branch of this project. Please copy and paste the contents of `RELEASE_TEMPLATE.md` into this release, and use that as your starting point.
     -   The new version is chosen at this point.
 -   When this pre-release is created in the `release` project, it will kick off a build in each project listed in the `release.json`, at the branch or commit hash defined in that document.
     -   Each project we want to build will catch this event (using `ae` as an example here) .
-    -   `Ae` will create a new github pre-release in its own project. It will share the tag sent from the `release` project. Changelogs will be generated in the `ae` project from commit messages.
+    -   `Ae` will create a new github pre-release in its own project. It will share the tag sent from the `release` project. The `RELEASE_TEMPLATE.md` will be used to generate a template in the `ae` release.
     -   The `ae` pre-release will trigger building the artifacts required for the release in `ae`.
-    -   The `ae` project will load the version from the tag `release` project tag. It will then inspect the `release.json` file to build the correct architectures and commit references.
+    -   The `ae` project will load the version from the tag `release` project tag. It will then inspect the `release.json` file to build the correct commit references.
 -   Once all of the projects have completed their artifact builds, and the maintainers are happy with the builds, the release in this repository is "released".
     -   Maintainers can change notes on any of the pre-releases
-    -   Projects then use this as a trigger to set their own releases as "released".
+    -   This will set all of the subprojects in the `release.json` file as "released"
 
 ```mermaid
 graph TD
