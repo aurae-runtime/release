@@ -6,7 +6,7 @@ Releases will be created in this repository for all official builds of `aurae` a
 
 ### Stable Release
 
-Stable versions will follow a `vX.Y.Z` format. Versions will be consistent across everything being released.
+Stable versions will follow a `vX.Y.Z` format. Versions will be consistent across everything being released. [SemVer](https://doc.rust-lang.org/cargo/reference/resolver.html?highlight=alpha#semver-compatibility) versioning is used.
 
 -   `X`: A major version - This represents a significant change in the project. It can include breaking changes and new features.
 -   `Y`: Minor version - This represents new features and improvements to the project. It can also include non-breaking changes.
@@ -14,20 +14,21 @@ Stable versions will follow a `vX.Y.Z` format. Versions will be consistent acros
 
 ### Development Releases
 
-Code that has not reached stability will be versioned with an additional segment to indicate it is not release.
+Code that has not reached stability will be versioned with an additional segment to indicate it is not release. Rust will sort [lexicographically](https://doc.rust-lang.org/cargo/reference/resolver.html?highlight=alpha#pre-releases) for development releases.
 
--   `bX` - Beta releases will be built from the `commits` referenced in the release.yaml file. They can be used as a staging ground for release and are intended for testing and feedback from the community.
+-   `aa.X` - **Experimental** releases. These are intended for development purposes. There is no compatibility guarantee with these releases.
 
--   `aX` - Alpha releases will be built from the `HEAD` of each project. They are intended for testing and development purposes. An `a1` will indicate it is the first alpha release of this new version. As additional are built the `a` digit will increment.
+-   `a.X` - **Alpha** releases will be built from the `HEAD` of each project. They are intended for testing and development purposes. An `a.1` will indicate it is the first alpha release of this new version. As additional are built the digit after `a` will increment.
 
--   `xX` - Experimental releases. These are intended for development purposes. There is no compatibility guarantee with these releases.
+-   `b.X` - **Beta** releases will be built from the `commits` referenced in the release.yaml file. They can be used as a staging ground for release and are intended for testing and feedback from the community.
 
 ## Release schedule
 
-| Release | Schedule  |
-| ------- | --------- |
-| alpha   | as needed |
-| beta    | as needed |
+| Release      | Schedule  |
+| ------------ | --------- |
+| experimental | as needed |
+| alpha        | as needed |
+| beta         | as needed |
 
 ## Cutting a versioned release
 
