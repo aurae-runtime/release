@@ -18,9 +18,9 @@ Code that has not reached stability will be versioned with an additional segment
 
 -   `aa.X` - **Experimental** releases. These are intended for development purposes. There is no compatibility guarantee with these releases.
 
--   `a.X` - **Alpha** releases will be built from the `HEAD` of each project. They are intended for testing and development purposes. An `a.1` will indicate it is the first alpha release of this new version. As additional are built the digit after `a` will increment.
+-   `alpha.X` - **Alpha** releases will be built from the `HEAD` of each project. They are intended for testing and development purposes. An `alpha.1` will indicate it is the first alpha release of this new version. As additional are built the digit after `alpha` will increment.
 
--   `b.X` - **Beta** releases will be built from the `commits` referenced in the release.yaml file. They can be used as a staging ground for release and are intended for testing and feedback from the community.
+-   `beta.X` - **Beta** releases will be built from the `commits` referenced in the release.yaml file. They can be used as a staging ground for release and are intended for testing and feedback from the community.
 
 ## Release schedule
 
